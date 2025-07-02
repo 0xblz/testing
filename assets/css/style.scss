@@ -1,0 +1,28 @@
+---
+---
+
+@import "reset";
+@import "colors";
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: $base-font-size;
+  font-family: $font-family;
+  background: $background;
+  color: $text-color;
+}
+h1, h2, h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+a {
+  color: $link-color;
+  text-decoration: underline;
+}
