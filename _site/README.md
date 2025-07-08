@@ -20,7 +20,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Visit `/style.html` to see all available components and styling.
+Visit `/style` to see all available components and styling.
 
 ## File Structure
 
@@ -33,7 +33,7 @@ _sass/
 └── _navigation.scss   # Header and mobile navigation
 
 _layouts/default.html  # Base template
-style.html            # Component showcase
+style.html            # Style guide
 index.html            # Homepage
 ```
 
