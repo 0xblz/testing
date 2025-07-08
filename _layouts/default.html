@@ -2,43 +2,29 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }}{% else %}Minimal Jekyll Site{% endif %}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="has-navigation">
+<body>
   <!-- Navigation -->
   <header>
-    <nav>
-      <a href="/" class="nav-logo">Brutalist</a>
-      <div class="nav-links">
-        <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-        <a href="/style" {% if page.url == "/style.html" or page.url == "/style/" %}class="active"{% endif %}>Style</a>
-      </div>
-      <div class="hamburger">
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-      </div>
-    </nav>
+    {% include navigation.html %}
   </header>
+
+  <!-- Main Content -->
+  <main>
+    {{ content }}
+  </main>
 
   <!-- Mobile Navigation Drawer -->
   <aside>
-    <div>
-      <a href="/" class="nav-logo">Brutalist</a>
-    </div>
-    <nav>
-      <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-      <a href="/style" {% if page.url == "/style.html" or page.url == "/style/" %}class="active"{% endif %}>Style</a>
-    </nav>
+    {% include navigation.html type="mobile" %}
   </aside>
 
   <!-- Navigation Overlay -->
   <div class="nav-overlay"></div>
 
-  <main>
-    {{ content }}
-  </main>
   <script src="/assets/js/test.js"></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+{% assign nav_pages = site.pages | where_exp: "item", "item.nav_order" | sort: "nav_order" %}
+
+{% if include.type == "mobile" %}
+  <div>
+    <h2><a href="/">Brutalist</a></h2>
+  </div>
+  <nav>
+    {% for nav_page in nav_pages %}
+      <a href="{{ nav_page.url }}" {% if page.url == nav_page.url %}class="active"{% endif %}>{{ nav_page.nav_title | default: nav_page.title }}</a>
+    {% endfor %}
+  </nav>
+{% else %}
+  <nav>
+    <h2><a href="/">Brutalist</a></h2>
+    <div class="nav-links">
+      {% for nav_page in nav_pages %}
+        <a href="{{ nav_page.url }}" {% if page.url == nav_page.url %}class="active"{% endif %}>{{ nav_page.nav_title | default: nav_page.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+  </nav>
+{% endif %} 

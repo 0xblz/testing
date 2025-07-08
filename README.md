@@ -1,181 +1,219 @@
-# BRUTA • MONO Testing Template
+# Brutalist Jekyll Starter
 
-A minimal Jekyll-based testing environment with a complete brutalist/monochrome design system. This project serves as a **barebone template** for rapid prototyping and testing UI components with a built-in, production-ready styling framework.
+A complete Jekyll starter project with a clean brutalist theme. Ready for AI assistants to build upon for rapid project development.
 
-## 🎯 Project Purpose
+## What This Is
 
-This is a **testing and prototyping template** designed for:
+This is a **starter foundation** that provides:
+- **Complete base theme** - Brutalist design with automatic dark mode
+- **Semantic HTML structure** - Clean, accessible markup patterns
+- **Modular CSS architecture** - Organized SCSS files for easy extension
+- **Essential components** - Forms, navigation, typography ready to use
+- **AI-friendly structure** - Clear patterns for AI assistants to follow
 
-- **Rapid UI Testing**: Quickly test new components and layouts
-- **Design System Foundation**: Pre-built monochrome styling system ready to use
-- **AI Development**: Structured for AI-assisted development and iteration
-- **Template Base**: Foundation for new projects requiring clean, modern aesthetics
-- **Component Testing**: Isolated environment for testing individual UI elements
+Perfect for starting new projects without building basic styling from scratch.
 
-## 🎨 Design System
+## Quick Start
 
-### **BRUTA • MONO Aesthetic**
-- **Brutalist Design**: Raw geometric shapes, stark contrasts, bold typography
-- **Monochrome Palette**: Pure black and white for maximum focus and clarity
-- **Space Mono Font**: Consistent monospace typography from Google Fonts
-- **Geometric Elements**: Sharp edges, no rounded corners, bold borders and shadows
-
-### **Automatic Dark Mode**
-- Seamlessly switches between light and dark themes
-- Respects system `prefers-color-scheme` setting
-- Smooth transitions with CSS custom properties
-- Maintains brutalist aesthetic in both modes
-
-## 📁 File Structure
-
-```
-├── _sass/
-│   ├── _variables.scss    # Theme variables and CSS custom properties
-│   ├── _layout.scss       # Basic layout and container styles
-│   ├── _typography.scss   # All text and heading styles
-│   ├── _forms.scss        # Form components and styling
-│   ├── _components.scss   # Reusable UI components
-│   └── _reset.scss        # CSS reset
-├── assets/css/
-│   └── style.scss         # Main stylesheet (imports all partials)
-├── _layouts/
-│   └── default.html       # Base HTML template
-├── style.html             # Component showcase and documentation
-└── index.html             # Homepage
+```bash
+bundle install
+bundle exec jekyll serve
 ```
 
-## 🧩 Available Components
+Visit `/style.html` to see all available components and styling.
 
-### **Typography**
-- Hierarchical headings (H1-H3) with geometric borders
-- Text utility classes (`.text-large`, `.text-caps`, `.text-highlight`, etc.)
-- Code blocks and inline code styling
-- Lists with custom geometric bullet points
-- Blockquotes with quotation marks
+## File Structure
 
-### **Forms**
-- Styled input fields with geometric shadows
-- Custom checkbox and radio buttons
-- Select dropdowns with theme-aware arrows
-- Form validation states
-- Responsive form layouts
+```
+_sass/
+├── _variables.scss    # Theme colors and settings
+├── _layout.scss       # Basic layout styles
+├── _typography.scss   # Text and heading styles
+├── _forms.scss        # Form components
+├── _navigation.scss   # Header and mobile navigation
+└── _components.scss   # UI components
 
-### **UI Components**
-- **`.mono-button`**: Primary button component
-- **`.bruta-box`**: Geometric container with double borders
-- **`.bruta-separator`**: Decorative divider with pattern
-- **`.text-box`**: Content containers (standard and inverse)
-- **`.text-grid`**: Responsive grid layout system
-- **`.theme-indicator`**: Shows current theme mode
+_layouts/default.html  # Base template
+style.html            # Component showcase
+index.html            # Homepage
+```
 
-## 🚀 Quick Start
+## Available Components
 
-### **For Testing/Development:**
-1. Clone or download this repository
-2. Run `bundle install` (if using Jekyll locally)
-3. Start development: `bundle exec jekyll serve`
-4. Visit `/style.html` to see all available components
+### Typography
+- Semantic headings (h1-h3) with consistent styling
+- Links with hover effects
+- Blockquotes with styling
+- Lists with custom bullets/numbering
+- Code blocks and inline code
 
-### **For AI Development:**
-- Use `/style.html` as component reference
-- All styles are modular and can be copied independently
-- CSS custom properties make theming easy to modify
-- Semantic HTML structure for accessibility
+### Forms
+- Text inputs, email, textarea, select
+- Radio buttons and checkboxes in semantic fieldsets
+- Submit and reset buttons
+- Proper labels and grouping
 
-### **As a Template:**
-1. Copy the `_sass/` directory for the complete design system
-2. Import the stylesheets in your main CSS file
-3. Use the HTML structure from `style.html` as component examples
-4. Customize CSS custom properties in `_variables.scss` for different themes
+### Navigation
+- Fixed header with responsive hamburger menu
+- Mobile drawer with overlay
+- Semantic HTML structure
 
-## 💡 Usage Examples
+### UI Components
+- `.mono-button` - Primary button component
+- `<section>` - Content container with brutalist styling
+- `<hr>` - Horizontal rule section divider
 
-### **Testing New Components**
+## Usage Examples
+
 ```html
-<!-- Add to any page for instant styling -->
-<div class="bruta-box">
-  <h2>New Component</h2>
-  <p>Test content with automatic styling</p>
-  <button class="mono-button">Action</button>
-</div>
-```
+<!-- Content container -->
+<section>
+  <h1>Project Title</h1>
+  <p>Content goes here</p>
+</section>
 
-### **Custom Themes**
-```scss
-// Override in _variables.scss
-:root {
-  --background: #your-bg-color;
-  --text-color: #your-text-color;
-  --accent-color: #your-accent-color;
-}
-```
-
-### **Form Testing**
-```html
-<!-- Instantly styled forms -->
+<!-- Form structure -->
 <form>
-  <div class="form-group">
-    <label for="test">Test Input</label>
-    <input type="text" id="test" placeholder="Styled automatically">
+  <div>
+    <label for="input">Label</label>
+    <input type="text" id="input">
   </div>
-  <button type="submit">Submit</button>
+  
+  <fieldset>
+    <legend>Options</legend>
+    <label><input type="radio" name="option"> Choice</label>
+  </fieldset>
+  
+  <div>
+    <button type="submit">Submit</button>
+  </div>
 </form>
+
+<!-- Navigation (in _layouts/default.html) -->
+<header>
+  {% include navigation.html %}
+</header>
+
+<!-- To add a page to navigation, add front matter to any page:
+---
+layout: default
+nav_order: 3
+nav_title: About
+---
+-->
 ```
 
-## 🎛️ Features
+## Theme Customization
 
-- **📱 Responsive Design**: Mobile-first approach with flexbox
-- **🌓 Automatic Dark Mode**: System preference detection
-- **♿ Accessibility**: Semantic HTML and proper contrast ratios
-- **⚡ Performance**: Minimal, efficient CSS
-- **🔧 Modular Architecture**: Easy to extend and customize
-- **📚 Self-Documenting**: Live component showcase included
-
-## 🔧 Customization
-
-### **Colors**
-Modify CSS custom properties in `_variables.scss`:
+Colors in `_sass/_variables.scss`:
 ```scss
 :root {
-  --background: #ffffff;    // Background color
-  --text-color: #000000;    // Text color
-  --accent-color: #000000;  // Borders, highlights
-  --shadow-color: #000000;  // Box shadows
+  --background: #ffffff;
+  --text-color: #000000;
+  --accent-color: #000000;
+  --border-color: #000000;
 }
 ```
 
-### **Typography**
-Change fonts in `_variables.scss`:
+Typography:
 ```scss
-$font-family: 'Your Font', monospace;
+$font-family: 'Space Mono', monospace;
 $base-font-size: 18px;
 ```
 
-### **Components**
-Add new components to `_components.scss` following the existing patterns:
+## AI Assistant Guidelines
+
+### This Starter Provides
+
+**Ready-to-use foundation:**
+- Complete theme with light/dark modes
+- Responsive navigation system
+- Form styling and components
+- Typography hierarchy
+- Semantic HTML patterns
+
+**Build upon this by:**
+- Adding new pages with `layout: default`
+- Creating new components in `_sass/_components.scss`
+- Extending forms and navigation as needed
+- Customizing colors in `_sass/_variables.scss`
+
+### Common Tasks
+
+**Adding new components:**
+- Add CSS to `_sass/_components.scss`
+- Follow existing patterns (`.component-name`, hover states, responsive variants)
 - Use CSS custom properties for colors
-- Include hover states with geometric shadows
-- Add responsive variants
+- Test in both light and dark modes
 
-## 🤖 AI Development Notes
+**Modifying colors/theme:**
+- Edit `_sass/_variables.scss` only
+- Change CSS custom properties in `:root` blocks
+- Dark mode variants in `@media (prefers-color-scheme: dark)`
 
-- **Component Reference**: `/style.html` shows all available components
-- **Modular Styles**: Each SCSS file has a single responsibility
-- **CSS Custom Properties**: Easy to modify colors programmatically
-- **Semantic Structure**: HTML follows accessibility best practices
-- **Template Ready**: Can be copied and modified for any project
-- **Testing Friendly**: Minimal setup required for component testing
+**Adding new pages:**
+- Create HTML files in root directory
+- Use `layout: default` in front matter
+- Add `nav_order: #` and `nav_title: "Name"` to automatically include in navigation
 
-## 📋 Dependencies
+**Form modifications:**
+- Edit `_sass/_forms.scss` for styling
+- Use semantic HTML: `<fieldset>`, `<legend>`, proper labels
+- Forms inherit button styling from `.mono-button`
 
-- **Jekyll** (for static site generation)
-- **Sass** (for CSS preprocessing)
-- **Google Fonts** (Space Mono)
+**Navigation changes:**
+- Header/mobile nav in `_sass/_navigation.scss`
+- Update both desktop and mobile versions
+- Test hamburger menu functionality
 
-## 📄 License
+### File Responsibilities
 
-This is a testing template - use freely for any purpose.
+- `_variables.scss` - Colors, fonts, breakpoints only
+- `_layout.scss` - Basic layout, containers, accessibility
+- `_typography.scss` - Text styling, no containers
+- `_forms.scss` - Form elements, semantic HTML
+- `_navigation.scss` - Header and mobile navigation
+- `_components.scss` - UI components (buttons, boxes, separators)
 
----
+### Best Practices
 
-**Perfect for**: UI testing, rapid prototyping, design system foundations, AI-assisted development, and as a starting point for projects requiring clean, modern aesthetics.
+✅ **Do:**
+- Keep semantic HTML structure
+- Use CSS custom properties for theming
+- Test responsive behavior
+- Maintain brutalist aesthetic (sharp edges, bold borders)
+- Use existing component patterns
+
+❌ **Avoid:**
+- Inline styles
+- Complex animations
+- Rounded corners or gradients
+- Breaking semantic HTML
+- Adding unused CSS
+
+### Testing
+
+- Check `/style.html` for component reference
+- Test both light and dark modes
+- Verify mobile responsiveness
+- Ensure semantic HTML accessibility
+
+### Quick Reference
+
+Component pattern:
+```scss
+.new-component {
+  border: 3px solid $border-color;
+  background: $background;
+  color: $text-color;
+  box-shadow: 4px 4px 0px $shadow-color;
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0px var(--shadow-rgba);
+  }
+}
+```
+
+This starter gives you everything needed to build a complete project without starting from scratch.
