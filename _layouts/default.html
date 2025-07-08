@@ -12,7 +12,7 @@
       <a href="/" class="nav-logo">Brutalist</a>
       <div class="nav-links">
         <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-        <a href="/style.html" {% if page.url == "/style.html" %}class="active"{% endif %}>Style</a>
+        <a href="/style" {% if page.url == "/style.html" or page.url == "/style/" %}class="active"{% endif %}>Style</a>
       </div>
       <div class="hamburger">
         <div class="hamburger-line"></div>
@@ -30,7 +30,7 @@
     </div>
     <nav>
       <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-      <a href="/style.html" {% if page.url == "/style.html" %}class="active"{% endif %}>Style</a>
+      <a href="/style" {% if page.url == "/style.html" or page.url == "/style/" %}class="active"{% endif %}>Style</a>
     </nav>
   </aside>
 
