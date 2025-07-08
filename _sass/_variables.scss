@@ -2,6 +2,9 @@
 $base-font-size: 18px;
 $font-family: 'Space Mono', monospace;
 
+// Layout settings
+$container-max-width: 800px;
+
 // CSS Custom Properties for theme switching
 :root {
   --background: #ffffff;
