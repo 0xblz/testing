@@ -2,12 +2,48 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>BRUTA • MONO</title>
+  <title>Minimal Jekyll Site</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body class="has-navigation">
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <div class="nav-links">
+        <a href="/" >Home</a>
+        <a href="/style.html" class="active">Style</a>
+      </div>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside>
+    <div>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <button>×</button>
+    </div>
+    <nav>
+      <a href="/" >Home</a>
+      <a href="/style.html" class="active">Style</a>
+    </nav>
+  </aside>
+
+  <!-- Navigation Overlay -->
+  <div class="nav-overlay"></div>
+
   <main>
-    <div class="theme-indicator"></div>
+    <div class="bruta-box">
+  <h1>Design System Showcase</h1>
+  <p>A comprehensive display of our brutalist design components.</p>
+</div>
+
+<div class="theme-indicator"></div>
 
 <h1>BRUTA • MONO</h1>
 
@@ -101,6 +137,25 @@
 
 <div class="bruta-separator"></div>
 
+<!-- Navigation Component -->
+<section>
+  <h2>Navigation Component</h2>
+  <p>Fixed navigation with responsive hamburger menu. Try resizing the window to see the mobile behavior.</p>
+  <div class="text-box">
+    <h3>Features:</h3>
+    <ul>
+      <li>Fixed position with z-index management</li>
+      <li>Responsive hamburger menu for mobile</li>
+      <li>Smooth drawer animation</li>
+      <li>Overlay backdrop for mobile</li>
+      <li>Active state management</li>
+      <li>Semantic HTML structure</li>
+    </ul>
+  </div>
+</section>
+
+<div class="bruta-separator"></div>
+
 <h2>Typography Hierarchy</h2>
 
 <p>Each heading level uses progressive geometric borders and bold uppercase styling to create clear visual hierarchy without color dependencies.</p>
@@ -182,35 +237,17 @@ const design = {
     <div class="text-box text-box-inverse">
       <p><strong>Inverse text box:</strong> High contrast version for maximum impact and attention-grabbing content.</p>
     </div>
-  </div>
-
-  <div class="demo-section">
-    <h4>Grid Layout</h4>
+  
     <div class="text-grid">
       <div class="text-box">
-        <h5>Column One</h5>
-        <p>Responsive grid system maintains brutalist aesthetic across different screen sizes.</p>
+        <h5>Grid Layout</h5>
+        <p>Text boxes can be arranged in responsive grids for organized content presentation.</p>
       </div>
       <div class="text-box">
-        <h5>Column Two</h5>
-        <p>Each column maintains consistent spacing and geometric design principles.</p>
-      </div>
-      <div class="text-box">
-        <h5>Column Three</h5>
-        <p>Perfect for showcasing multiple pieces of related content side by side.</p>
+        <h5>Consistent Spacing</h5>
+        <p>All components maintain uniform spacing and shadow treatments for visual cohesion.</p>
       </div>
     </div>
-  </div>
-
-  <div class="demo-section">
-    <h4>Dark Mode Compatibility</h4>
-    <p>The theme automatically detects your system's dark mode preference and inverts the monochrome colors accordingly:</p>
-    <ul>
-      <li><strong>Light Mode:</strong> White background, black text and borders</li>
-      <li><strong>Dark Mode:</strong> Black background, white text and borders</li>
-      <li><strong>Smooth Transitions:</strong> Colors change seamlessly when switching modes</li>
-      <li><strong>Consistent Aesthetic:</strong> Brutalist design maintained in both themes</li>
-    </ul>
   </div>
 </div> 
   </main>

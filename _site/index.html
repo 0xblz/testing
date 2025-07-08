@@ -2,12 +2,71 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Testing Site</title>
+  <title>Minimal Jekyll Site</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body class="has-navigation">
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <div class="nav-links">
+        <a href="/" class="active">Home</a>
+        <a href="/style.html" >Style</a>
+      </div>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside>
+    <div>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <button>×</button>
+    </div>
+    <nav>
+      <a href="/" class="active">Home</a>
+      <a href="/style.html" >Style</a>
+    </nav>
+  </aside>
+
+  <!-- Navigation Overlay -->
+  <div class="nav-overlay"></div>
+
   <main>
-    <h1>Testing stuff...</h1>
+    <div class="bruta-box">
+  <h1>Brutalist Design System</h1>
+  <p>A minimal, monochrome design framework for rapid prototyping and testing.</p>
+  <a href="/style.html" class="mono-button">View Style Guide</a>
+</div>
+
+<section>
+  <h2>Quick Start</h2>
+  <p>This is a barebone template designed for rapid UI development and testing. Perfect for AI-assisted coding sessions.</p>
+  
+  <div class="text-grid">
+    <div class="text-box">
+      <h3>Features</h3>
+      <ul>
+        <li>Brutalist aesthetic with Space Mono font</li>
+        <li>Automatic dark mode support</li>
+        <li>Responsive navigation with hamburger menu</li>
+        <li>Modular SCSS architecture</li>
+        <li>Ready-to-use components</li>
+      </ul>
+    </div>
+    
+    <div class="text-box">
+      <h3>Navigation</h3>
+      <p>Try the responsive navigation above. On mobile, it transforms into a hamburger menu with a smooth drawer animation.</p>
+      <p>The navigation is fixed and adapts to both light and dark modes automatically.</p>
+    </div>
+  </div>
+</section>
 
   </main>
   <script src="/assets/js/test.js"></script>

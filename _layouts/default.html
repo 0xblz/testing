@@ -5,7 +5,38 @@
   <title>{% if page.title %}{{ page.title }}{% else %}Minimal Jekyll Site{% endif %}</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body class="has-navigation">
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <div class="nav-links">
+        <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+        <a href="/style.html" {% if page.url == "/style.html" %}class="active"{% endif %}>Style</a>
+      </div>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside>
+    <div>
+      <a href="/" class="nav-logo">Brutalist</a>
+      <button>×</button>
+    </div>
+    <nav>
+      <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+      <a href="/style.html" {% if page.url == "/style.html" %}class="active"{% endif %}>Style</a>
+    </nav>
+  </aside>
+
+  <!-- Navigation Overlay -->
+  <div class="nav-overlay"></div>
+
   <main>
     {{ content }}
   </main>
