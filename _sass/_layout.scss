@@ -1,20 +1,63 @@
+// Basic Layout Styles
+
+// Body - foundational styles only
 body {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
   font-size: $base-font-size;
   font-family: $font-family;
   background: $background;
   color: $text-color;
+  line-height: 1.4;
+  font-weight: 400;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
-h1, h2, h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+
+// Main container
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 4rem);
+  transition: padding 0.3s ease-in-out;
 }
-p {
-  margin-bottom: 1rem;
+
+// Focus styles for accessibility
+*:focus-visible {
+  outline: 3px solid $accent-color;
+  outline-offset: 2px;
+  transition: outline 0.2s ease-in-out;
 }
-a {
-  color: $link-color;
-  text-decoration: underline;
+
+// Selection styles
+::selection {
+  background: $accent-color;
+  color: $background;
+}
+
+::-moz-selection {
+  background: $accent-color;
+  color: $background;
+}
+
+// Basic responsive layout
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

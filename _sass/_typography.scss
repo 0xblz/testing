@@ -1,0 +1,327 @@
+// Typography Styles
+// Headings
+h1, h2, h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-left: 8px solid $accent-color;
+  padding-left: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 8px 8px 0px $shadow-color;
+  padding: 1rem;
+  border: 4px solid $border-color;
+  background: $background;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-left: 6px solid $accent-color;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  border-left: 4px solid $accent-color;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+// Paragraphs and text
+p {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  text-align: justify;
+  hyphens: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid $accent-color;
+  padding-bottom: 2px;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  
+  &:hover {
+    background: $accent-color;
+    color: $background;
+    box-shadow: 4px 4px 0px var(--shadow-rgba);
+    transform: translate(-2px, -2px);
+  }
+  
+  &:active {
+    transition: all 0.1s ease-in-out;
+    transform: translate(0px, 0px);
+    box-shadow: 2px 2px 0px var(--shadow-rgba);
+  }
+}
+
+// Blockquotes
+blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 8px solid $accent-color;
+  background: var(--highlight-bg);
+  font-style: italic;
+  font-size: 1.1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  &::before {
+    content: '"';
+    font-size: 4rem;
+    font-weight: 700;
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    color: $accent-color;
+    line-height: 1;
+  }
+  
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  cite {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+    
+    &::before {
+      content: '— ';
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Code elements
+code {
+  font-family: $font-family;
+  font-size: 0.9rem;
+  background: $accent-color;
+  color: $background;
+  padding: 0.2rem 0.4rem;
+  font-weight: 400;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+pre {
+  background: $accent-color;
+  color: $background;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-family: $font-family;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  border: 3px solid $border-color;
+  box-shadow: 4px 4px 0px $shadow-color;
+  display: flex;
+  flex-direction: column;
+  
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    display: block;
+  }
+}
+
+// Lists
+ul, ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  li {
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+ul {
+  list-style: none;
+  
+  li {
+    position: relative;
+    
+    &::before {
+      content: '▪';
+      font-weight: 700;
+      color: $accent-color;
+      flex-shrink: 0;
+      margin-left: -1.5rem;
+    }
+  }
+}
+
+ol {
+  counter-reset: ol-counter;
+  
+  li {
+    position: relative;
+    counter-increment: ol-counter;
+    
+    &::before {
+      content: counter(ol-counter) '.';
+      font-weight: 700;
+      color: $accent-color;
+      font-family: $font-family;
+      flex-shrink: 0;
+      margin-left: -2rem;
+      min-width: 2rem;
+    }
+  }
+}
+
+// Text utility classes
+.text-large {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.text-small {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.text-mono {
+  font-family: $font-family;
+  letter-spacing: 0.05em;
+}
+
+.text-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-strike {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: $accent-color;
+}
+
+.text-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: $accent-color;
+  text-underline-offset: 4px;
+}
+
+.text-highlight {
+  background: $accent-color;
+  color: $background;
+  padding: 0.2rem 0.4rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  transform: rotate(-1deg);
+  margin: 0 0.2rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    transform: rotate(-1deg) scale(1.05);
+    box-shadow: 2px 2px 0px var(--shadow-rgba);
+  }
+}
+
+// Typography demo styles
+.typography-demo {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  .demo-section {
+    padding: 2rem;
+    border: 2px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      border-left: 4px solid $accent-color;
+      padding-left: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      min-height: 40px;
+    }
+    
+    h5 {
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      border-left: none;
+      padding-left: 0;
+      min-height: auto;
+    }
+  }
+}
+
+// Responsive typography
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+} 
