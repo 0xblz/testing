@@ -109,9 +109,48 @@ header {
       display: none;
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .hamburger {
       display: flex;
     }
   }
+}
+ 
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: $border-width solid $border-color;
+  color: $text-color;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: $font-family;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--button-hover-bg);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $accent-color;
+  }
+  
+  .theme-icon {
+    display: inline-block;
+    user-select: none;
+  }
+}
+
+// Navigation actions container
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
  

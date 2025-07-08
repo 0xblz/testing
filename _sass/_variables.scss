@@ -29,9 +29,23 @@ $border-width-accent: 8px;
   --button-hover-bg: rgba(0, 0, 0, 0.1);
 }
 
-// Dark mode theme
+// Dark mode theme - manual toggle
+[data-theme="dark"] {
+  --background: #000000;
+  --text-color: #ffffff;
+  --link-color: #ffffff;
+  --accent-color: #ffffff;
+  --border-color: #ffffff;
+  --shadow-color: #ffffff;
+  --shadow-rgba: rgba(255, 255, 255, 0.3);
+  --highlight-bg: rgba(255, 255, 255, 0.05);
+  --form-placeholder: rgba(255, 255, 255, 0.5);
+  --button-hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+// Dark mode theme - system preference fallback
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #000000;
     --text-color: #ffffff;
     --link-color: #ffffff;
