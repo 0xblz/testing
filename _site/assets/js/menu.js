@@ -3,7 +3,7 @@ console.log('Test loaded');
 // Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
-  const navDrawer = document.querySelector('aside');
+  const navDrawer = document.querySelector('.menu');
   const navOverlay = document.querySelector('.nav-overlay');
 
   // Toggle mobile menu
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Close menu when clicking on drawer links
-  const drawerLinks = document.querySelectorAll('aside nav a');
+  const drawerLinks = document.querySelectorAll('.menu nav a');
   drawerLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });

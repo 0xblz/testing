@@ -1,9 +1,19 @@
 // Base font settings
-$base-font-size: 18px;
-$font-family: 'Space Mono', monospace;
+$base-font-size: 16px;
+$small-font-size: 14px;
+$font-family: 'Geist Mono', monospace;
 
 // Layout settings
 $container-max-width: 800px;
+
+// Breakpoints
+$mobile-breakpoint: 768px;
+
+// Border widths
+$border-width: 3px;
+$border-width-thick: 4px;
+$border-width-thin: 2px;
+$border-width-accent: 8px;
 
 // CSS Custom Properties for theme switching
 :root {

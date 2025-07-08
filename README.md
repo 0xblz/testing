@@ -1,17 +1,17 @@
-# Brutalist Jekyll Starter
+# Minimal Brutalist Jekyll Starter
 
-A complete Jekyll starter project with a clean brutalist theme. Ready for AI assistants to build upon for rapid project development.
+A clean Jekyll starter project with a minimal brutalist theme. Focused on clean typography, semantic HTML, and simple interactions without excessive animations.
 
 ## What This Is
 
 This is a **starter foundation** that provides:
-- **Complete base theme** - Brutalist design with automatic dark mode
-- **Semantic HTML structure** - Clean, accessible markup patterns
-- **Modular CSS architecture** - Organized SCSS files for easy extension
+- **Minimal brutalist design** - Clean typography with automatic dark mode
+- **Semantic HTML structure** - Accessible markup with proper form elements
+- **Organized CSS architecture** - Modular SCSS files for easy extension
 - **Essential components** - Forms, navigation, typography ready to use
-- **AI-friendly structure** - Clear patterns for AI assistants to follow
+- **Clean aesthetic** - Bold borders and typography without excessive effects
 
-Perfect for starting new projects without building basic styling from scratch.
+Perfect for projects that need strong visual hierarchy without distracting animations.
 
 ## Quick Start
 
@@ -30,8 +30,7 @@ _sass/
 ├── _layout.scss       # Basic layout styles
 ├── _typography.scss   # Text and heading styles
 ├── _forms.scss        # Form components
-├── _navigation.scss   # Header and mobile navigation
-└── _components.scss   # UI components
+└── _navigation.scss   # Header and mobile navigation
 
 _layouts/default.html  # Base template
 style.html            # Component showcase
@@ -41,27 +40,29 @@ index.html            # Homepage
 ## Available Components
 
 ### Typography
-- Semantic headings (h1-h3) with consistent styling
-- Links with hover effects
-- Blockquotes with styling
+- Semantic headings (h1-h3) with consistent uppercase styling
+- Clean links with simple hover color changes
+- Blockquotes with accent borders
 - Lists with custom bullets/numbering
-- Code blocks and inline code
+- Code blocks and inline code with inverted colors
 
 ### Forms
-- Text inputs, email, textarea, select
-- Radio buttons and checkboxes in semantic fieldsets
-- Submit and reset buttons
-- Proper labels and grouping
+- Individual inputs in simple divs (text, email, textarea, select)
+- Fieldsets for grouped elements (radio buttons, checkboxes, actions)
+- Clean borders without shadows
+- Semantic labels and proper grouping
 
 ### Navigation
-- Fixed header with responsive hamburger menu
+- Clean header with responsive hamburger menu
 - Mobile drawer with overlay
-- Semantic HTML structure
+- Automatic page discovery via front matter
 
 ### UI Components
-- `.mono-button` - Primary button component
-- `<section>` - Content container with brutalist styling
-- `<hr>` - Horizontal rule section divider
+- `<button>` - Clean brutalist styling with simple hover effects
+- `<hr>` - Accent-colored horizontal rule divider
+
+### Layout Elements
+- `<section>` - Content container with bold borders (no shadows)
 
 ## Usage Examples
 
@@ -81,11 +82,13 @@ index.html            # Homepage
   
   <fieldset>
     <legend>Options</legend>
-    <label><input type="radio" name="option"> Choice</label>
+    <label><input type="radio" name="option" value="1"> Choice 1</label>
+    <label><input type="radio" name="option" value="2"> Choice 2</label>
   </fieldset>
   
   <div>
     <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
   </div>
 </form>
 
@@ -117,8 +120,8 @@ Colors in `_sass/_variables.scss`:
 
 Typography:
 ```scss
-$font-family: 'Space Mono', monospace;
-$base-font-size: 18px;
+$font-family: 'Geist Mono', monospace;
+$base-font-size: 16px;
 ```
 
 ## AI Assistant Guidelines
@@ -134,15 +137,15 @@ $base-font-size: 18px;
 
 **Build upon this by:**
 - Adding new pages with `layout: default`
-- Creating new components in `_sass/_components.scss`
+- Adding custom styling to existing SCSS files
 - Extending forms and navigation as needed
 - Customizing colors in `_sass/_variables.scss`
 
 ### Common Tasks
 
-**Adding new components:**
-- Add CSS to `_sass/_components.scss`
-- Follow existing patterns (`.component-name`, hover states, responsive variants)
+**Adding new styling:**
+- Add CSS to the appropriate SCSS file (`_forms.scss`, `_layout.scss`, etc.)
+- Follow existing patterns (clean borders, simple hover states, semantic selectors)
 - Use CSS custom properties for colors
 - Test in both light and dark modes
 
@@ -158,8 +161,9 @@ $base-font-size: 18px;
 
 **Form modifications:**
 - Edit `_sass/_forms.scss` for styling
-- Use semantic HTML: `<fieldset>`, `<legend>`, proper labels
-- Forms inherit button styling from `.mono-button`
+- Use divs for individual inputs, fieldsets for grouped elements
+- Proper semantic HTML with labels
+- Clean styling without excessive effects
 
 **Navigation changes:**
 - Header/mobile nav in `_sass/_navigation.scss`
@@ -169,11 +173,10 @@ $base-font-size: 18px;
 ### File Responsibilities
 
 - `_variables.scss` - Colors, fonts, breakpoints only
-- `_layout.scss` - Basic layout, containers, accessibility
-- `_typography.scss` - Text styling, no containers
-- `_forms.scss` - Form elements, semantic HTML
+- `_layout.scss` - Basic layout, containers, section styling, accessibility
+- `_typography.scss` - Text styling, horizontal rules
+- `_forms.scss` - Form elements, button styling, semantic HTML
 - `_navigation.scss` - Header and mobile navigation
-- `_components.scss` - UI components (buttons, boxes, separators)
 
 ### Best Practices
 
@@ -181,12 +184,14 @@ $base-font-size: 18px;
 - Keep semantic HTML structure
 - Use CSS custom properties for theming
 - Test responsive behavior
-- Maintain brutalist aesthetic (sharp edges, bold borders)
+- Maintain minimal brutalist aesthetic (clean borders, bold typography)
 - Use existing component patterns
+- Keep interactions simple and functional
 
 ❌ **Avoid:**
 - Inline styles
-- Complex animations
+- Excessive animations or transforms
+- Box shadows and complex effects
 - Rounded corners or gradients
 - Breaking semantic HTML
 - Adding unused CSS
@@ -206,14 +211,21 @@ Component pattern:
   border: 3px solid $border-color;
   background: $background;
   color: $text-color;
-  box-shadow: 4px 4px 0px $shadow-color;
-  transition: all 0.2s ease-in-out;
+  padding: 1rem;
   
   &:hover {
-    transform: translate(-1px, -1px);
-    box-shadow: 6px 6px 0px var(--shadow-rgba);
+    background: $accent-color;
+    color: $background;
   }
 }
 ```
 
-This starter gives you everything needed to build a complete project without starting from scratch.
+Breakpoint variable:
+```scss
+@media (max-width: $mobile-breakpoint) {
+  // Mobile styles
+}
+```
+
+This starter gives you a clean foundation to build upon without excessive styling distractions.
+

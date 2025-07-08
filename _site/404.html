@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found</title>
+  <title>Minimal Jekyll Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -11,15 +14,19 @@
   <header>
     
 
+  
+
 
   <nav>
-    <h2><a href="/">Brutalist</a></h2>
+    <h3><a href="/">Brutalist</a></h3>
     <div class="nav-links">
       
-        <a href="/" >Home</a>
-      
-        <a href="/style.html" >Style</a>
-      
+    
+      <a href="/" >Home</a>
+    
+      <a href="/style.html" >Style Guide</a>
+    
+  
     </div>
     <div class="hamburger">
       <div class="hamburger-line"></div>
@@ -32,33 +39,41 @@
 
   <!-- Main Content -->
   <main>
-    <h1>404 – Page Not Found</h1>
-<p>Sorry, the page you are looking for does not exist.</p>
-<a href="/">Go Home</a>
+    <div class="container">
+      <section>
+  <h1>404 – Page Not Found</h1>
+  <p>Sorry, the page you are looking for does not exist.</p>
+  <a href="/">Go Home</a>
+</section>
 
+    </div>
   </main>
 
   <!-- Mobile Navigation Drawer -->
-  <aside>
+  <div class="menu">
     
+
+  
 
 
   <div>
-    <h2><a href="/">Brutalist</a></h2>
+    <h3>Menu</h3>
   </div>
   <nav>
     
+    
       <a href="/" >Home</a>
     
-      <a href="/style.html" >Style</a>
+      <a href="/style.html" >Style Guide</a>
     
+  
   </nav>
  
-  </aside>
+  </div>
 
   <!-- Navigation Overlay -->
   <div class="nav-overlay"></div>
 
-  <script src="/assets/js/test.js"></script>
+  <script src="/assets/js/menu.js"></script>
 </body>
 </html>

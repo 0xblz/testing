@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimal Jekyll Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -11,15 +14,19 @@
   <header>
     
 
+  
+
 
   <nav>
-    <h2><a href="/">Brutalist</a></h2>
+    <h3><a href="/">Brutalist</a></h3>
     <div class="nav-links">
       
-        <a href="/" >Home</a>
-      
-        <a href="/style.html" class="active">Style</a>
-      
+    
+      <a href="/" >Home</a>
+    
+      <a href="/style.html" class="active">Style Guide</a>
+    
+  
     </div>
     <div class="hamburger">
       <div class="hamburger-line"></div>
@@ -32,16 +39,16 @@
 
   <!-- Main Content -->
   <main>
-    <section>
+    <div class="container">
+      <section>
   <h1>Style Guide</h1>
+  <p>Basic components for the brutalist design system.</p>
 </section>
-
-<p>Basic components for the brutalist design system.</p>
 
 <hr>
 
 <h2>Typography</h2>
-<p>Headers and body text use <strong>Space Mono</strong> with clean styling.</p>
+<p>Headers and body text use <strong>Geist Mono</strong> with clean styling.</p>
 
 <h3>Headings</h3>
 <p>All headings use uppercase styling with bold weights.</p>
@@ -81,9 +88,9 @@ function createComponent() {
 }</code></pre>
 
 <h3>Interactive Elements</h3>
-<p>Links have <a href="#">bold treatment</a> that transforms on hover.</p>
+<p>Links have <a href="#">bold treatment</a>.</p>
 
-<button class="mono-button">Click Me</button>
+<button>Click Me</button>
 
 <hr>
 
@@ -152,29 +159,34 @@ function createComponent() {
 <section>
   <p>This is a basic content box with brutalist styling.</p>
 </section> 
+    </div>
   </main>
 
   <!-- Mobile Navigation Drawer -->
-  <aside>
+  <div class="menu">
     
+
+  
 
 
   <div>
-    <h2><a href="/">Brutalist</a></h2>
+    <h3>Menu</h3>
   </div>
   <nav>
     
+    
       <a href="/" >Home</a>
     
-      <a href="/style.html" class="active">Style</a>
+      <a href="/style.html" class="active">Style Guide</a>
     
+  
   </nav>
  
-  </aside>
+  </div>
 
   <!-- Navigation Overlay -->
   <div class="nav-overlay"></div>
 
-  <script src="/assets/js/test.js"></script>
+  <script src="/assets/js/menu.js"></script>
 </body>
 </html>
