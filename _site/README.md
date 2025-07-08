@@ -1,11 +1,11 @@
-# Minimal Brutalist Jekyll Starter
+# Simple Jekyll Starter
 
-A clean Jekyll starter project with a minimal brutalist theme. Focused on clean typography, semantic HTML, and simple interactions without excessive animations.
+A clean Jekyll starter project with a minimal theme. Focused on clean typography, semantic HTML, and simple interactions without excessive animations.
 
 ## What This Is
 
 This is a **starter foundation** that provides:
-- **Minimal brutalist design** - Clean typography with automatic dark mode
+- **Simple, clean design** - Clean typography with automatic dark mode
 - **Semantic HTML structure** - Accessible markup with proper form elements
 - **Organized CSS architecture** - Modular SCSS files for easy extension
 - **Essential components** - Forms, navigation, typography ready to use
@@ -58,7 +58,7 @@ index.html            # Homepage
 - Automatic page discovery via front matter
 
 ### UI Components
-- `<button>` - Clean brutalist styling with simple hover effects
+- `<button>` - Clean styling with simple hover effects
 - `<hr>` - Accent-colored horizontal rule divider
 
 ### Layout Elements
@@ -100,8 +100,8 @@ index.html            # Homepage
 <!-- To add a page to navigation, add front matter to any page:
 ---
 layout: default
+title: About
 nav_order: 3
-nav_title: About
 ---
 -->
 ```
@@ -157,7 +157,7 @@ $base-font-size: 16px;
 **Adding new pages:**
 - Create HTML files in root directory
 - Use `layout: default` in front matter
-- Add `nav_order: #` and `nav_title: "Name"` to automatically include in navigation
+- Add `title: "Name"` and `nav_order: #` to automatically include in navigation
 
 **Form modifications:**
 - Edit `_sass/_forms.scss` for styling
@@ -183,9 +183,9 @@ $base-font-size: 16px;
 ✅ **Do:**
 - Keep semantic HTML structure
 - Use CSS custom properties for theming
-- Test responsive behavior
-- Maintain minimal brutalist aesthetic (clean borders, bold typography)
-- Use existing component patterns
+  - Test responsive behavior
+- Maintain clean aesthetic (simple borders, bold typography)
+  - Use existing component patterns
 - Keep interactions simple and functional
 
 ❌ **Avoid:**
