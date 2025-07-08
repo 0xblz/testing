@@ -89,13 +89,13 @@ header {
 
     &.active {
       .hamburger-line:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(5px, 4px);
       }
       .hamburger-line:nth-child(2) {
         opacity: 0;
       }
       .hamburger-line:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(5px, -4px);
       }
     }
   }
@@ -121,9 +121,6 @@ aside {
   }
 
   > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid $border-color;
@@ -135,26 +132,6 @@ aside {
       letter-spacing: 0.1em;
       color: $text-color;
       text-decoration: none;
-    }
-
-    button {
-      background: none;
-      border: 2px solid $border-color;
-      color: $text-color;
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-
-      @media (hover: hover) {
-        &:hover {
-          background: var(--button-hover-bg);
-        }
-      }
     }
   }
 
@@ -311,25 +288,9 @@ body.has-navigation {
   gap: 1rem;
   transition: all 0.3s ease-in-out;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 2px solid $border-color;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-  }
-  
   &:hover {
     transform: translate(-2px, -2px);
     box-shadow: 10px 10px 0px var(--shadow-rgba);
-    
-    &::before {
-      transform: translate(-2px, -2px);
-    }
   }
   
   p {
@@ -348,30 +309,8 @@ body.has-navigation {
   align-items: center;
   transition: all 0.3s ease-in-out;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--accent-color) 0px,
-      var(--accent-color) 10px,
-      transparent 10px,
-      transparent 20px
-    );
-    transition: all 0.3s ease-in-out;
-  }
-  
   &:hover {
     height: 6px;
-    
-    &::before {
-      height: 10px;
-      top: -3px;
-    }
   }
 }
 
@@ -438,26 +377,8 @@ hr {
   align-items: center;
   transition: all 0.3s ease-in-out;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 8px;
-    background: $accent-color;
-    transition: all 0.3s ease-in-out;
-  }
-  
   &:hover {
     height: 6px;
-    
-    &::before {
-      width: 30px;
-      height: 10px;
-      top: -3px;
-    }
   }
 }
 

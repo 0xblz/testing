@@ -6,34 +6,21 @@ h1, h2, h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  border-left: 8px solid $accent-color;
-  padding-left: 1rem;
-  position: relative;
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  box-shadow: 8px 8px 0px $shadow-color;
-  padding: 1rem;
-  border: 4px solid $border-color;
-  background: $background;
-  display: inline-block;
-  min-height: 60px;
   line-height: 1.2;
 }
 
 h2 {
   font-size: 2rem;
-  border-left: 6px solid $accent-color;
-  min-height: 50px;
   line-height: 1.3;
 }
 
 h3 {
   font-size: 1.5rem;
-  border-left: 4px solid $accent-color;
-  min-height: 40px;
   line-height: 1.3;
 }
 
@@ -258,19 +245,14 @@ ol {
     h4 {
       margin: 0;
       font-size: 1.2rem;
-      border-left: 4px solid $accent-color;
-      padding-left: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      min-height: 40px;
       line-height: 1.3;
     }
     
     h5 {
       margin: 1rem 0 0.5rem 0;
       font-size: 1rem;
-      border-left: none;
-      padding-left: 0;
       line-height: 1.3;
     }
   }

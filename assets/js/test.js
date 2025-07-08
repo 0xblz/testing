@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
   const navDrawer = document.querySelector('aside');
   const navOverlay = document.querySelector('.nav-overlay');
-  const closeBtn = document.querySelector('aside button');
 
   // Toggle mobile menu
   function toggleMobileMenu() {
@@ -26,10 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Event listeners
   if (hamburger) {
     hamburger.addEventListener('click', toggleMobileMenu);
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeMobileMenu);
   }
 
   if (navOverlay) {
