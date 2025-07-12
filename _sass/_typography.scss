@@ -1,0 +1,182 @@
+// Typography Styles
+// Headings
+
+.container {
+  
+  h1, h2, h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+  section {
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    } 
+  }
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+// Paragraphs and text
+p {
+  font-weight: 400;
+  hyphens: auto;
+  line-height: 1.4em;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline;
+  border-bottom: $border-width solid transparent;
+  
+  &:hover,
+  &.active {
+    border-color: $accent-color;
+  }
+}
+
+// Blockquotes
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: $border-width-accent solid $accent-color;
+  background: var(--highlight-bg);
+  font-style: italic;
+  font-size: $base-font-size;
+  position: relative;
+  
+  &::before {
+    content: '"';
+    font-size: 4rem;
+    font-weight: 700;
+    position: absolute;
+    top: -0.75rem;
+    left: 0.75rem;
+    color: $accent-color;
+    line-height: 1;
+  }
+  
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  
+  cite {
+    font-size: $small-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+    
+    &::before {
+      content: '— ';
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Code elements
+code {
+  font-family: $font-family;
+  font-size: $small-font-size;
+  background: $accent-color;
+  color: $background;
+  padding: 0.25rem 0.5rem;
+  font-weight: 400;
+  border-radius: 0;
+  display: inline;
+}
+
+pre {
+  background: $accent-color;
+  color: $background;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-family: $font-family;
+  font-size: $small-font-size;
+  line-height: 1.4;
+  overflow-x: auto;
+  border: $border-width solid $border-color;
+  
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    display: block;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  list-style: none;
+  
+  li {
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    position: relative;
+    
+    &::before {
+      font-weight: 700;
+      color: $accent-color;
+      position: absolute;
+      left: -1.5rem;
+    }
+  }
+}
+
+ul li::before {
+  content: '▪';
+}
+
+ol {
+  counter-reset: ol-counter;
+  
+  li {
+    counter-increment: ol-counter;
+    
+    &::before {
+      content: counter(ol-counter) '.';
+      font-family: $font-family;
+      min-width: 3rem;
+    }
+  }
+}
+
+// Horizontal rule separator
+hr {
+  height: 4px;
+  background: $accent-color;
+  border: none;
+  margin: 3rem 0;
+}

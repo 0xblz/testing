@@ -1,0 +1,33 @@
+{% assign nav_pages = site.pages | where_exp: "item", "item.nav_order" | sort: "nav_order" %}
+
+  {% capture nav_links %}
+    {% for nav_page in nav_pages %}
+      <a href="{{ nav_page.url }}" {% if page.url == nav_page.url %}class="active"{% endif %}>{{ nav_page.title }}</a>
+    {% endfor %}
+  {% endcapture %}
+
+{% if include.type == "mobile" %}
+  <div>
+    <h3>Menu</h3>
+  </div>
+  <nav>
+    {{ nav_links }}
+  </nav>
+{% else %}
+  <nav>
+    <h3><a href="/">Home</a></h3>
+    <div class="nav-links">
+      {{ nav_links }}
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </div>
+    </div>
+  </nav>
+{% endif %} 

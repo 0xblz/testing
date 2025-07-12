@@ -1,0 +1,156 @@
+// Navigation Component
+header {
+  background: $background;
+  border-bottom: $border-width solid $border-color;
+  padding: 0.75rem 1.5rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 0.75rem 1rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.2rem;
+
+    .hamburger-line {
+      width: 25px;
+      height: 3px;
+      background: $text-color;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 4px);
+      }
+      .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -4px);
+      }
+    }
+  }
+}
+
+// Mobile Navigation Drawer
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: $background;
+  border-right: $border-width solid $border-color;
+  z-index: 1001;
+  padding: 1.5rem;
+  transition: left 0.3s ease;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 1rem;
+  }
+
+  &.active {
+    left: 0;
+  }
+
+  > div {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: $border-width-thin solid $border-color;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+// Navigation Overlay
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Responsive Navigation
+@media (max-width: $mobile-breakpoint) {
+  header {
+    .nav-links {
+      display: none;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}
+ 
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: $border-width solid $border-color;
+  color: $text-color;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: $font-family;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--button-hover-bg);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $accent-color;
+  }
+  
+  .theme-icon {
+    display: inline-block;
+    user-select: none;
+  }
+}
+
+// Navigation actions container
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 

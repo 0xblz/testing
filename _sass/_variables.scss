@@ -1,5 +1,68 @@
+// Base font settings
 $base-font-size: 16px;
-$font-family: 'Inter', Arial, sans-serif;
-$background: $sky-50;
-$text-color: $gray-900;
-$link-color: $sky-500;
+$small-font-size: 14px;
+$font-family: 'Geist Mono', monospace;
+
+// Layout settings
+$container-max-width: 800px;
+
+// Breakpoints
+$mobile-breakpoint: 768px;
+
+// Border widths
+$border-width: 3px;
+$border-width-thick: 4px;
+$border-width-thin: 2px;
+$border-width-accent: 8px;
+
+// CSS Custom Properties for theme switching
+:root {
+  --background: #ffffff;
+  --text-color: #000000;
+  --link-color: #000000;
+  --accent-color: #000000;
+  --border-color: #000000;
+  --shadow-color: #000000;
+  --shadow-rgba: rgba(0, 0, 0, 0.3);
+  --highlight-bg: rgba(0, 0, 0, 0.05);
+  --form-placeholder: rgba(0, 0, 0, 0.5);
+  --button-hover-bg: rgba(0, 0, 0, 0.1);
+}
+
+// Dark mode theme - manual toggle
+[data-theme="dark"] {
+  --background: #000000;
+  --text-color: #ffffff;
+  --link-color: #ffffff;
+  --accent-color: #ffffff;
+  --border-color: #ffffff;
+  --shadow-color: #ffffff;
+  --shadow-rgba: rgba(255, 255, 255, 0.3);
+  --highlight-bg: rgba(255, 255, 255, 0.05);
+  --form-placeholder: rgba(255, 255, 255, 0.5);
+  --button-hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+// Dark mode theme - system preference fallback
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: #000000;
+    --text-color: #ffffff;
+    --link-color: #ffffff;
+    --accent-color: #ffffff;
+    --border-color: #ffffff;
+    --shadow-color: #ffffff;
+    --shadow-rgba: rgba(255, 255, 255, 0.3);
+    --highlight-bg: rgba(255, 255, 255, 0.05);
+    --form-placeholder: rgba(255, 255, 255, 0.5);
+    --button-hover-bg: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// SCSS variables that use CSS custom properties
+$background: var(--background);
+$text-color: var(--text-color);
+$link-color: var(--link-color);
+$accent-color: var(--accent-color);
+$border-color: var(--border-color);
+$shadow-color: var(--shadow-color);
