@@ -1,62 +1,71 @@
-# Testing Site
+# Simple Jekyll Site
 
-A minimal Jekyll-based website with a clean, modern design using Tailwind-like color schemes.
+A clean Jekyll site with minimal design, automatic dark/light mode, and responsive navigation.
 
 ## Features
 
-- Responsive layout with max-width container
-- Modern typography using Inter font family
-- Organized SCSS architecture
-- Tailwind-inspired color palette system
-- Minimal JavaScript integration
-- Custom 404 error page
+- **Clean typography** with Geist Mono font
+- **Theme toggle** (🌙/☀️) with localStorage persistence
+- **Responsive navigation** with mobile hamburger menu
+- **Dark/light mode** that follows system preference or manual selection
+- **Semantic HTML** and accessible markup
 
-## Project Structure
+## Quick Start
 
-```
-.
-├── _layouts/       # Layout templates
-├── _sass/         # SCSS partials
-│   ├── _colors.scss    # Color palette definitions
-│   ├── _layout.scss    # Main layout styles
-│   ├── _reset.scss     # CSS reset
-│   └── _variables.scss # Theme variables
-└── assets/
-    ├── css/       # Main stylesheet
-    └── js/        # JavaScript files
-```
-
-## Development
-
-### Prerequisites
-
-- Ruby
-- Jekyll ~> 4.3
-
-### Setup
-
-1. Install dependencies:
-```sh
+```bash
 bundle install
-```
-
-2. Run the development server:
-```sh
 bundle exec jekyll serve
 ```
 
-The site will be available at `http://localhost:4000`
+Visit `/style` to see all available components.
 
-### Customization
+## File Structure
 
-- Color schemes can be modified in `_sass/_colors.scss`
-- Typography and layout variables in `_sass/_variables.scss`
-- Main layout styles in `_sass/_layout.scss`
+```
+_sass/
+├── _variables.scss    # Theme colors and settings
+├── _layout.scss       # Basic layout styles
+├── _typography.scss   # Text and heading styles
+├── _forms.scss        # Form components
+└── _navigation.scss   # Header and navigation
 
-## Deployment
+_layouts/default.html  # Base template
+_includes/navigation.html  # Navigation component
+assets/js/menu.js     # Navigation and theme toggle
+```
 
-The site is configured to deploy to `testing.blaze.design`
+## Adding Pages
 
-## License
+Create HTML files with front matter:
 
-This project is open source. Feel free to use it as a template for your own site.
+```yaml
+---
+layout: default
+title: "About"
+nav_order: 2
+---
+```
+
+Pages with `nav_order` automatically appear in navigation.
+
+## Customizing
+
+Edit colors in `_sass/_variables.scss`:
+
+```scss
+:root {
+  --background: #ffffff;
+  --text-color: #000000;
+  --accent-color: #000000;
+  --border-color: #000000;
+}
+```
+
+## Theme Toggle
+
+The theme toggle button appears in the header on both desktop and mobile. It cycles between:
+- 🌙 Light mode → Dark mode
+- ☀️ Dark mode → Light mode
+
+User preference is saved in localStorage and restored on page load.
+
