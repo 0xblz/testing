@@ -1,5 +1,3 @@
-console.log('Test loaded');
-
 // Theme toggle functionality
 function initThemeToggle() {
   const themeToggle = document.getElementById('theme-toggle');

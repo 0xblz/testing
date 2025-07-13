@@ -1,13 +1,21 @@
+// Common form element styles
+%form-element-base {
+  font-family: $font-family;
+  border: $border-width solid $border-color;
+  
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+}
+
 // Button Styles
 button {
+  @extend %form-element-base;
   background: $background;
   color: $text-color;
-  border: $border-width solid $border-color;
   padding: 1rem 2rem;
-  font-family: $font-family;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   font-size: $small-font-size;
   cursor: pointer;
   display: inline-flex;
@@ -23,7 +31,6 @@ button {
   
   &[type="reset"] {
     background: transparent;
-    color: $text-color;
     
     &:hover {
       background: var(--button-hover-bg);
@@ -35,8 +42,7 @@ button {
 // Form Styles
 form {
   width: 100%;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -45,24 +51,24 @@ form {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    
+    &:has(button) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
   
-  > div:has(button) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
+  // Base label styling
   label {
     font-family: $font-family;
     font-weight: 700;
     font-size: $small-font-size;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
     color: $text-color;
-    margin-bottom: 0;
     display: block;
+    margin-bottom: 0;
   }
   
+  // Input field styles
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -70,18 +76,12 @@ form {
   input[type="url"],
   textarea,
   select {
+    @extend %form-element-base;
     width: 100%;
     padding: 1rem;
-    font-family: $font-family;
     font-size: $base-font-size;
     background-color: $background;
     color: $text-color;
-    border: $border-width solid $border-color;
-    
-    &:focus {
-      outline: none;
-      border-color: $accent-color;
-    }
     
     &::placeholder {
       color: var(--form-placeholder);
@@ -101,13 +101,13 @@ form {
     padding-right: 3rem;
     background: 
       linear-gradient(45deg, transparent 50%, $text-color 50%), 
-      linear-gradient(135deg, $text-color 50%, transparent 50%);
+      linear-gradient(135deg, $text-color 50%, transparent 50%),
+      $background;
     background-position: 
       calc(100% - 20px) center, 
       calc(100% - 15px) center;
     background-size: 5px 5px, 5px 5px;
     background-repeat: no-repeat;
-    background-color: $background;
   }
   
   fieldset {
@@ -117,23 +117,18 @@ form {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
-    border: $border-width-thin solid $shadow-color;
+    border: $border-width-thin solid $border-color;
     
     legend {
       font-weight: 700;
       font-size: $small-font-size;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
       padding: 0 0.5rem;
       color: $text-color;
     }
     
-    // Checkbox and radio label styling
+    // Checkbox and radio styling
     label:has(input[type="checkbox"], input[type="radio"]) {
-      font-size: $small-font-size;
       font-weight: 400;
-      text-transform: none;
-      margin-bottom: 0;
       display: flex;
       align-items: center;
       gap: 0.5rem;
